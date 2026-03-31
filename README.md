@@ -14,6 +14,53 @@ Its goal is not merely to generate outputs, but to compile tasks into loops that
 
 ---
 
+## Requirements
+
+- Python 3.10+
+- a repository where you want to define and run `TASK.md`
+
+---
+
+## Installation
+
+Install Loopstack from PyPI:
+
+```bash
+python3 -m pip install loopstack
+```
+
+If you are developing Loopstack itself, use:
+
+```bash
+uv sync --dev
+```
+
+---
+
+## Quickstart
+
+Create a task repo, compile it, and run it:
+
+```bash
+loopstack init
+$EDITOR TASK.md
+loopstack compile
+loopstack run
+```
+
+With the current MVP, `loopstack run` executes the compiled `loopstack.py`, runs declared verifiers, and writes runtime artifacts under `.loopstack/`:
+
+```text
+TASK.md
+loopstack.py
+.loopstack/
+  state.json
+  memory.json
+  runs/
+```
+
+---
+
 ## Why Loopstack
 
 Large language models are useful not simply because they generate text, but because they compress vast amounts of human experience into callable priors.

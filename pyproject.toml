@@ -1,0 +1,64 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "loopstack"
+version = "0.1.0"
+description = "An agentic compiler for verifiable task loops."
+readme = "README.md"
+requires-python = ">=3.10"
+license = "MIT"
+authors = [{ name = "Mingli Yuan" }]
+maintainers = [{ name = "Mingli Yuan" }]
+keywords = [
+    "agent",
+    "compiler",
+    "automation",
+    "workflow",
+    "verification",
+]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Programming Language :: Python :: 3 :: Only",
+    "Typing :: Typed",
+]
+
+[project.scripts]
+loopstack = "loopstack.cli:main"
+
+[project.urls]
+Homepage = "https://github.com/epistemic-frontier/loopstack"
+Repository = "https://github.com/epistemic-frontier/loopstack"
+Issues = "https://github.com/epistemic-frontier/loopstack/issues"
+
+[dependency-groups]
+dev = [
+    "build",
+    "mypy",
+    "pytest",
+    "ruff",
+    "twine",
+]
+
+[tool.uv]
+package = true
+
+[tool.setuptools.packages.find]
+include = ["loopstack"]
+
+[tool.setuptools.package-data]
+loopstack = ["py.typed"]
+
+[tool.ruff]
+
+[tool.mypy]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
